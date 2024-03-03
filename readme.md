@@ -63,7 +63,7 @@ Então nossa consulta vai retornar algo como:
       "nome": "Celular 2",
       "price": 3.200,
       "amount": 2
-    },
+    }
   ]
 }
 ```
@@ -95,22 +95,21 @@ Todo o seu desenvolvimento será levado em consideração. Busque alcançar o se
 * Criar documentação para seus endpoints (utilizando ferramentas como Postman ou Insomnia).
 * Aplicar conceitos de Clean Architecture, S.O.L.I.D., Test-Driven Development (TDD), Domain-driven design (DDD), Command Query Responsibility Segregation (CQRS), Objects Calisthenics, You Ain’t Gonna Need It (YAGNI), Conventional Commits, e KISS.
 
-## Nossa análise
-
-Todo o seu desenvolvimento será levado em consideração. Busque alcançar o seu melhor, utilizando os recursos com os quais você se sente mais confortável.
-
-### É essencial no seu código:
-* Utilizar comandos de Migrate/Seed para a criação e atualização do seu banco de dados.
-* Este projeto é destinado a uma API Rest; portanto, respeite o formato de comunicação de entrada e saída de dados.
-* Faça commits regulares no seu código.
-
-### Pontos que irão destacar você neste desafio:
-* Utilizar Docker para a execução do seu projeto.
-* Implementar testes unitários.
-* Criar documentação para seus endpoints (utilizando ferramentas como Postman ou Insomnia).
-* Aplicar conceitos de Clean Architecture, S.O.L.I.D., Test-Driven Development (TDD), Domain-driven design (DDD), Command Query Responsibility Segregation (CQRS), Objects Calisthenics, You Ain’t Gonna Need It (YAGNI), Conventional Commits, e KISS.
-
-
 ## Boa sorte!
 
 É isso!. Ficamos muito felizes com a sua aplicação para esse Teste. Estamos à sua disposição para tirar qualquer dúvida. Boa sorte! 😉
+
+
+### Checklist
+- [X] Docker
+- [ ] Testes Unitários
+- [ ] Testes de integração
+- [X] Produto Model
+- [ ] Venda Model
+- [ ] Listagem produtos
+- [ ] Cadastro venda
+- [ ] Listagem vendas
+- [ ] Consulta venda
+- [ ] Cancelar venda
+- [ ] Adicionar produtos à venda
+- [ ] Documentação endpoints
