@@ -100,13 +100,16 @@ Todo o seu desenvolvimento será levado em consideração. Busque alcançar o se
 É isso!. Ficamos muito felizes com a sua aplicação para esse Teste. Estamos à sua disposição para tirar qualquer dúvida. Boa sorte! 😉
 
 
+### Seeders
+- Product```php artisan db:seed --class=ProductSeeder```
+
 ### Checklist
 - [X] Docker
 - [ ] Testes Unitários
 - [ ] Testes de integração
 - [X] Produto Model
-- [ ] Venda Model
-- [ ] Listagem produtos
+- [X] Venda Model
+- [X] Listagem produtos
 - [ ] Cadastro venda
 - [ ] Listagem vendas
 - [ ] Consulta venda
