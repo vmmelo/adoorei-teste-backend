@@ -35,22 +35,22 @@ services:
         networks:
             - app-network
 
-    #MySQL
+    #PostgreSQL
     db:
-        image: mysql:5.7.22
+        image: postgres:12-alpine
         container_name: db
         restart: unless-stopped
         tty: true
         ports:
-            - "3306:3306"
+            - "$DB_PORT:5432"
         environment:
-            MYSQL_DATABASE: laravel
-            MYSQL_ROOT_PASSWORD: password
-            SERVICE_TAGS: dev
-            SERVICE_NAME: mysql
+            - POSTGRES_USER=$POSTGRES_USER
+            - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+            - POSTGRES_MULTIPLE_DATABASES=$POSTGRES_DB, $POSTGRES_DB_TEST
         volumes:
-            - dbdata:/var/lib/mysql/
-            - .docker/mysql/my.cnf:/etc/mysql/my.cnf
+            - pgdata:/var/lib/postgresql/data
+            - pgconf:/etc/postgresql
+            - pglog:/var/log/postgresql
         networks:
             - app-network
 
@@ -60,5 +60,9 @@ networks:
         driver: bridge
 #Volumes
 volumes:
-    dbdata:
+    pgdata:
+        driver: local
+    pgconf:
+        driver: local
+    pglog:
         driver: local

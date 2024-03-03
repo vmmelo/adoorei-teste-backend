@@ -21,13 +21,15 @@ RUN apt-get update && apt-get install -y \
     curl \
     libonig-dev \
     libzip-dev \
+    libpq-dev \
+    libxml2-dev \
     libgd-dev
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 #Mine
 
 # Install extensions
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql pcntl bcmath gd zip xml
 RUN docker-php-ext-configure gd --with-external-gd
 RUN docker-php-ext-install gd
 
