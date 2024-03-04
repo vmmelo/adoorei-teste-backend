@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->integer('sale_id')->index();
             $table->integer('product_id')->index();
-            $table->integer('quantity')->index();
+            $table->integer('amount')->index();
             $table->timestamps();
 
             $table->foreign('sale_id')->references('id')->on('sales')->onDelete('cascade');

@@ -12,6 +12,7 @@ class SalesProduct extends Model
     protected $fillable = [
         'sale_id',
         'product_id',
+        'amount',
     ];
 
     public function sale(): \Illuminate\Database\Eloquent\Relations\BelongsTo

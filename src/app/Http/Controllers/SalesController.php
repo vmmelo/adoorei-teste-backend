@@ -23,7 +23,8 @@ class SalesController extends Controller
     {
         $page = $request->input('page');
         $limit = $request->input('limit');
-        return $this->service->getAll($limit, $page);
+        $withTrashed = $request->input('deleted');
+        return $this->service->getAll($limit, $page, $withTrashed);
     }
 
     /**
@@ -81,6 +82,11 @@ class SalesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $this->service->destroy(intval($id));
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'Sale not found'], 400);
+        }
+        return response()->noContent();
     }
 }

@@ -13,10 +13,15 @@ use App\Models\SalesProduct;
 class SalesService
 {
 
-    public function getAll($limit = 5, $page = 1): PaginationResource
+
+    public function getAll($limit = 5, $page = 1, $withTrashed = false): PaginationResource
     {
+        $query = Sale::orderBy('created_at', 'desc');
+        if($withTrashed){
+            $query = $query->withTrashed();
+        }
         return new PaginationResource(
-            Sale::orderBy('created_at', 'desc')->paginate(
+            $query->paginate(
                 $limit,
                 ['*'],
                 'page',
@@ -29,6 +34,11 @@ class SalesService
     public function getSaleById($id): Sale
     {
         return Sale::where('id', $id)->with('salesProducts', 'salesProducts.product')->firstOrFail();
+    }
+
+    public function destroy($id): bool
+    {
+        return Sale::where('id', $id)->firstOrFail()->delete();
     }
 
     public function store($data)
