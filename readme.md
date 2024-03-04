@@ -4,6 +4,22 @@
 <img src="https://adoorei.s3.us-east-2.amazonaws.com/images/loje_teste_logoadoorei_1662476663.png" width="160"></a>
 </p>
 
+### Resumo
+Utilizei nesse projeto uma imagem docker do PHP 8.1 com o framework laravel, servidor HTTP nginx e banco de dados PostgreSQL
+
+Para rodar o projeto, basta executar o docker-compose na raiz do projeto:
+```docker-compose up -d```
+
+#### Postman collection
+Uma collection do postman se encontra na pasta ```/docs``` contendo todas as requests utilizadas no projeto e uma descrição dos endpoints
+
+#### Executando Seeds
+- ```docker exec -it app php artisan db:seed```
+
+#### Executando testes
+- ```docker exec -it app php artisan test```
+
+
 # Desafio desenvolvedor back-end
 
 Seja muito bem-vindo(a), futuro desenvolvedor da Adoorei.
@@ -100,8 +116,7 @@ Todo o seu desenvolvimento será levado em consideração. Busque alcançar o se
 É isso!. Ficamos muito felizes com a sua aplicação para esse Teste. Estamos à sua disposição para tirar qualquer dúvida. Boa sorte! 😉
 
 
-### Seeders
-- Product```php artisan db:seed --class=ProductSeeder```
+
 
 ### Checklist
 - [X] Docker

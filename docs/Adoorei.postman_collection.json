@@ -70,7 +70,7 @@
 								}
 							]
 						},
-						"description": "This endpoint makes an HTTP GET request to retrieve a paginated list of products. The \"page\" query parameter is used to specify the page number to be retrieved.\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n#### Response Body\n\nThe response contains a JSON object with the following properties:\n\n- \"data\": An array of products, each containing \"id\", \"name\", \"price\", \"description\", \"created_at\", and \"updated_at\" attributes.\n- \"pagination\": Contains pagination information such as \"total\", \"per_page\", \"from\", \"to\", \"current_page\", \"last_page\", and \"has_next\".\n- \"links\": Provides URLs for the first, last, previous, and next pages.\n- \"meta\": Includes metadata like \"current_page\", \"from\", \"last_page\", \"links\" array, \"path\", \"per_page\", \"to\", and \"total\".\n    \n\nNote: The actual values for the product attributes and pagination information will be returned in the response."
+						"description": "This endpoint makes an HTTP GET request to retrieve a paginated list of products. The \"page\" query parameter is used to specify the page number to be retrieved. The \"with_trashed\" parameter includes in response the soft-deleted sales.\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n#### Response Body\n\nThe response contains a JSON object with the following properties:\n\n- \"data\": An array of products, each containing \"id\", \"name\", \"price\", \"description\", \"created_at\", and \"updated_at\" attributes.\n- \"pagination\": Contains pagination information such as \"total\", \"per_page\", \"from\", \"to\", \"current_page\", \"last_page\", and \"has_next\".\n- \"links\": Provides URLs for the first, last, previous, and next pages.\n- \"meta\": Includes metadata like \"current_page\", \"from\", \"last_page\", \"links\" array, \"path\", \"per_page\", \"to\", and \"total\".\n    \n\nNote: The actual values for the product attributes and pagination information will be returned in the response."
 					},
 					"response": []
 				},
@@ -89,7 +89,7 @@
 								"1"
 							]
 						},
-						"description": "This endpoint makes an HTTP GET request to retrieve a paginated list of products. The \"page\" query parameter is used to specify the page number to be retrieved.\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n#### Response Body\n\nThe response contains a JSON object with the following properties:\n\n- \"data\": An array of products, each containing \"id\", \"name\", \"price\", \"description\", \"created_at\", and \"updated_at\" attributes.\n- \"pagination\": Contains pagination information such as \"total\", \"per_page\", \"from\", \"to\", \"current_page\", \"last_page\", and \"has_next\".\n- \"links\": Provides URLs for the first, last, previous, and next pages.\n- \"meta\": Includes metadata like \"current_page\", \"from\", \"last_page\", \"links\" array, \"path\", \"per_page\", \"to\", and \"total\".\n    \n\nNote: The actual values for the product attributes and pagination information will be returned in the response."
+						"description": "Este endpoint recebe o ID de uma venda realizada e exibe mais detalhes como os produtos envolvidos, preços, ids.\n\nExemplo de resposta:\n\n``` json\n\n{\n    \"id\": 1,\n    \"amount\": \"7444.02\",\n    \"deleted_at\": null,\n    \"created_at\": \"2024-03-04T04:34:40.000000Z\",\n    \"updated_at\": \"2024-03-04T04:34:40.000000Z\",\n    \"sales_products\": [\n        {\n            \"id\": 1,\n            \"sale_id\": 1,\n            \"product_id\": 1,\n            \"amount\": 1,\n            \"created_at\": \"2024-03-04T04:34:40.000000Z\",\n            \"updated_at\": \"2024-03-04T04:34:40.000000Z\",\n            \"product\": {\n                \"id\": 1,\n                \"name\": \"Celular atque 9\",\n                \"price\": \"4000.9\",\n                \"description\": \"Voluptatibus dolor dicta minus sint qui debitis iste iure error.\",\n                \"created_at\": \"2024-03-04T04:33:33.000000Z\",\n                \"updated_at\": \"2024-03-04T04:33:33.000000Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"sale_id\": 1,\n            \"product_id\": 2,\n            \"amount\": 2,\n            \"created_at\": \"2024-03-04T04:34:40.000000Z\",\n            \"updated_at\": \"2024-03-04T04:34:40.000000Z\",\n            \"product\": {\n                \"id\": 2,\n                \"name\": \"Celular et 7\",\n                \"price\": \"1721.56\",\n                \"description\": \"Id dolor quia sint ea esse ipsa repellat cum asperiores quia laboriosam.\",\n                \"created_at\": \"2024-03-04T04:33:33.000000Z\",\n                \"updated_at\": \"2024-03-04T04:33:33.000000Z\"\n            }\n        }\n    ]\n}\n ```"
 					},
 					"response": []
 				},
@@ -116,7 +116,7 @@
 								"sales"
 							]
 						},
-						"description": "This endpoint makes an HTTP GET request to retrieve a paginated list of products. The \"page\" query parameter is used to specify the page number to be retrieved.\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n#### Response Body\n\nThe response contains a JSON object with the following properties:\n\n- \"data\": An array of products, each containing \"id\", \"name\", \"price\", \"description\", \"created_at\", and \"updated_at\" attributes.\n- \"pagination\": Contains pagination information such as \"total\", \"per_page\", \"from\", \"to\", \"current_page\", \"last_page\", and \"has_next\".\n- \"links\": Provides URLs for the first, last, previous, and next pages.\n- \"meta\": Includes metadata like \"current_page\", \"from\", \"last_page\", \"links\" array, \"path\", \"per_page\", \"to\", and \"total\".\n    \n\nNote: The actual values for the product attributes and pagination information will be returned in the response."
+						"description": "Endpoint responsável pela criação de uma nova venda. Espera receber um objeto JSON com a chave \"products\" contendo um array de produtos com seus respectivos ids e quantidade.\n\nSeu retorno traz os detalhes da venda que foi salva, incluindo os seus produtos."
 					},
 					"response": []
 				},
@@ -145,7 +145,7 @@
 								"5"
 							]
 						},
-						"description": "This endpoint makes an HTTP GET request to retrieve a paginated list of products. The \"page\" query parameter is used to specify the page number to be retrieved.\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n#### Response Body\n\nThe response contains a JSON object with the following properties:\n\n- \"data\": An array of products, each containing \"id\", \"name\", \"price\", \"description\", \"created_at\", and \"updated_at\" attributes.\n- \"pagination\": Contains pagination information such as \"total\", \"per_page\", \"from\", \"to\", \"current_page\", \"last_page\", and \"has_next\".\n- \"links\": Provides URLs for the first, last, previous, and next pages.\n- \"meta\": Includes metadata like \"current_page\", \"from\", \"last_page\", \"links\" array, \"path\", \"per_page\", \"to\", and \"total\".\n    \n\nNote: The actual values for the product attributes and pagination information will be returned in the response."
+						"description": "Endpoint responsável por adicionar produtos a uma venda realizada anteriormente.\n\nEspera receber um objeto JSON com a chave \"products\" contendo um array de produtos com seus respectivos ids e quantidade.\n\nSeu retorno traz os detalhes da venda que foi salva, incluindo os seus produtos."
 					},
 					"response": []
 				},
@@ -155,16 +155,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/sales/1",
+							"raw": "{{base_url}}/sales/2",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"sales",
-								"1"
+								"2"
 							]
 						},
-						"description": "This endpoint makes an HTTP GET request to retrieve a paginated list of products. The \"page\" query parameter is used to specify the page number to be retrieved.\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n#### Response Body\n\nThe response contains a JSON object with the following properties:\n\n- \"data\": An array of products, each containing \"id\", \"name\", \"price\", \"description\", \"created_at\", and \"updated_at\" attributes.\n- \"pagination\": Contains pagination information such as \"total\", \"per_page\", \"from\", \"to\", \"current_page\", \"last_page\", and \"has_next\".\n- \"links\": Provides URLs for the first, last, previous, and next pages.\n- \"meta\": Includes metadata like \"current_page\", \"from\", \"last_page\", \"links\" array, \"path\", \"per_page\", \"to\", and \"total\".\n    \n\nNote: The actual values for the product attributes and pagination information will be returned in the response."
+						"description": "Endpoint responsável por excluir uma venda do sistema. Recebe como parâmetro o ID da venda\n\nRetorna status code 204 em caso de sucesso\n\nou 400 em caso de erro na request"
 					},
 					"response": []
 				}
