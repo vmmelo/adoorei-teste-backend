@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Services\ProductsService;
+use App\Models\Sale;
+use App\Services\SalesService;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
-class ProductsController extends Controller
+class SalesController extends Controller
 {
-    private ProductsService $service;
-    public function __construct(ProductsService $productsService)
+    private SalesService $service;
+    public function __construct(SalesService $salesService)
     {
-        $this->service = new ProductsService();
+        $this->service = new SalesService();
 
     }
     /**
@@ -29,7 +30,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        // todo
+        //
     }
 
     /**
@@ -37,7 +38,13 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        // todo
+        try {
+            $validatedData = $this->validate($request, Sale::$rulesStore);
+            return $this->service->store($validatedData);
+        } catch (ValidationException $e){
+            dd($e->errors());
+        }
+
     }
 
     /**
@@ -45,7 +52,7 @@ class ProductsController extends Controller
      */
     public function show(string $id)
     {
-        // todo
+        //
     }
 
     /**
@@ -53,7 +60,7 @@ class ProductsController extends Controller
      */
     public function edit(string $id)
     {
-        // todo
+        //
     }
 
     /**
@@ -61,7 +68,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // todo
+        //
     }
 
     /**
@@ -69,6 +76,6 @@ class ProductsController extends Controller
      */
     public function destroy(string $id)
     {
-        // todo
+        //
     }
 }

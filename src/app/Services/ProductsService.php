@@ -12,15 +12,10 @@ use Illuminate\Http\Request;
  */
 class ProductsService
 {
-    /**
-     * @var Product
-     */
-    protected $product;
-
     public function getAll($limit = 15, $page = 1): PaginationResource
     {
         return new PaginationResource(
-            Product::orderBy('created_at')->paginate(
+            Product::orderBy('name')->paginate(
                 $limit,
                 ['*'],
                 'page',
@@ -28,6 +23,11 @@ class ProductsService
             )
 
     );
+    }
+
+    public function findProductsByIds(array $products_ids)
+    {
+        return Product::whereIn('id', $products_ids)->get()->keyBy('id');
     }
 
 }
