@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sale;
 use App\Services\SalesService;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
@@ -52,7 +53,11 @@ class SalesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        try {
+            return $this->service->getSaleById(intval($id));
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'Sale not found'], 400);
+        }
     }
 
     /**

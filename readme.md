@@ -111,8 +111,8 @@ Todo o seu desenvolvimento será levado em consideração. Busque alcançar o se
 - [X] Venda Model
 - [X] Listagem produtos
 - [X] Cadastro venda
-- [ ] Listagem vendas
-- [ ] Consulta venda específica
+- [X] Listagem vendas
+- [X] Consulta venda específica
 - [ ] Cancelar venda
 - [ ] Adicionar produtos à venda
 - [ ] Documentação endpoints

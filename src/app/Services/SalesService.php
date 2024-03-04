@@ -3,10 +3,8 @@
 namespace App\Services;
 
 use App\Http\Resources\PaginationResource;
-use App\Models\Product;
 use App\Models\Sale;
 use App\Models\SalesProduct;
-use Illuminate\Http\Request;
 
 /**
  * Class SalesService
@@ -18,7 +16,7 @@ class SalesService
     public function getAll($limit = 5, $page = 1): PaginationResource
     {
         return new PaginationResource(
-            Sale::with('salesProducts', 'salesProducts.product')->orderBy('created_at', 'desc')->paginate(
+            Sale::orderBy('created_at', 'desc')->paginate(
                 $limit,
                 ['*'],
                 'page',
