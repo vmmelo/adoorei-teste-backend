@@ -106,7 +106,7 @@ Todo o seu desenvolvimento será levado em consideração. Busque alcançar o se
 ### Checklist
 - [X] Docker
 - [ ] Testes Unitários
-- [ ] Testes de integração
+- [X] Testes de integração
 - [X] Produto Model
 - [X] Venda Model
 - [X] Listagem produtos
@@ -114,5 +114,5 @@ Todo o seu desenvolvimento será levado em consideração. Busque alcançar o se
 - [X] Listagem vendas
 - [X] Consulta venda específica
 - [X] Cancelar venda
-- [ ] Adicionar produtos à venda
+- [X] Adicionar produtos à venda
 - [ ] Documentação endpoints
