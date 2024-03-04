@@ -32,7 +32,7 @@ class SalesController extends Controller
      */
     public function create()
     {
-        //
+        // todo
     }
 
     /**
@@ -66,7 +66,7 @@ class SalesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // todo
     }
 
     /**
@@ -74,7 +74,16 @@ class SalesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // todo
+    }
+
+    public function addProducts(Request $request, string $id)
+    {
+        try {
+            return $this->service->addProducts(intval($id), $request->all());
+        } catch (ModelNotFoundException $e) {
+            return response()->json(['error' => 'Sale not found'], 400);
+        }
     }
 
     /**

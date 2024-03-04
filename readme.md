@@ -113,6 +113,6 @@ Todo o seu desenvolvimento será levado em consideração. Busque alcançar o se
 - [X] Cadastro venda
 - [X] Listagem vendas
 - [X] Consulta venda específica
-- [ ] Cancelar venda
+- [X] Cancelar venda
 - [ ] Adicionar produtos à venda
 - [ ] Documentação endpoints

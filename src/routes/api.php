@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/products', [\App\Http\Controllers\ProductsController::class, 'index'])->name('products.index');
 
 Route::apiResource('sales', \App\Http\Controllers\SalesController::class);
+Route::put('/sales/add_products/{id}', [\App\Http\Controllers\SalesController::class, 'addProducts'])->name('products.addProducts');
