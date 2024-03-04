@@ -23,7 +23,7 @@ class SalesController extends Controller
     {
         $page = $request->input('page');
         $limit = $request->input('limit');
-        $withTrashed = $request->input('deleted');
+        $withTrashed = $request->input('with_trashed');
         return $this->service->getAll($limit, $page, $withTrashed);
     }
 
